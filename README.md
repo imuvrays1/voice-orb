@@ -3,6 +3,8 @@
 **by [UV](https://github.com/imuvrays1)** · [MIT licence](LICENSE) ·
 [github.com/imuvrays1/voice-orb](https://github.com/imuvrays1/voice-orb)
 
+**[Try it live → imuvrays1.github.io/voice-orb](https://imuvrays1.github.io/voice-orb/)**
+
 An audio-reactive orb for voice interfaces, drawn in WebGL2. Play any voice through it,
 tune the look, and take the code.
 
@@ -30,6 +32,15 @@ Open http://localhost:3000. The page is the demo and the documentation in one pl
 the sources under the orb, tune the sliders, and copy the settings.
 
 `pnpm build` makes a production build and `pnpm typecheck` runs TypeScript alone.
+
+### Host your own copy
+
+The live page is GitHub Pages, built by
+[`.github/workflows/pages.yml`](.github/workflows/pages.yml) on every push to `main`.
+In a fork, open **Settings → Pages**, set **Source** to **GitHub Actions**, and push.
+The page appears at `https://<you>.github.io/<repository>/`. The workflow sets
+`PAGES_BASE_PATH` to the repository's folder, which makes `next build` export static
+files with every path under it.
 
 ## Use it in your project
 

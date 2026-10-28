@@ -4,7 +4,7 @@
   "private": true,
   "description": "Voice orb by UV: an audio-reactive WebGL2 orb for voice interfaces.",
   "author": "UV (https://github.com/imuvrays1)",
-  "homepage": "https://github.com/imuvrays1/voice-orb",
+  "homepage": "https://imuvrays1.github.io/voice-orb/",
   "repository": {
     "type": "git",
     "url": "https://github.com/imuvrays1/voice-orb.git"

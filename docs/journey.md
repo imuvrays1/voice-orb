@@ -358,7 +358,31 @@ Before the first push, a last check:
 | No private paths, no keys | A pushed secret has to be revoked, not just deleted |
 | The repository name is free, and the push uses the owner's account | The star count and every link already point at it |
 
-## 14. Next
+## 14. A live page on GitHub Pages
+
+The page is now live at [imuvrays1.github.io/voice-orb](https://imuvrays1.github.io/voice-orb/),
+hosted by GitHub Pages and rebuilt by a workflow on every push to `main`.
+
+**Why it works as plain files.** Pages serves files and nothing else: no server code runs.
+This page never needed any. Every route is prerendered, and everything that moves
+(WebGL, Web Audio, the star count) runs in the browser. So `next build` with
+`output: "export"` writes it all to `out/` as HTML, JavaScript and the clip.
+
+**The folder.** A project's Pages site lives under its repository's name,
+`/voice-orb/`, not at the root. Next's `basePath` prefixes its own links and scripts.
+The sample's path is a plain string, so it doesn't get the prefix on its own, and the
+config hands the prefix to the page as `NEXT_PUBLIC_BASE_PATH`.
+
+All of this happens only when the workflow sets `PAGES_BASE_PATH`. That way
+`pnpm dev` and `pnpm build` on your machine still run at the root, and a fork gets its
+own folder name without editing anything.
+
+| Tried | What happened | Fix |
+|-------|---------------|-----|
+| Checking the export before pushing | Built in a clean copy with `--frozen-lockfile`, as the workflow does, then served `out/` under `/voice-orb/` | Nothing failed to load, there were no console errors, and Play found the clip at `/voice-orb/audio/voice-orb.mp3` |
+| Running the workflow in the private lab | Pages on a private repository needs a paid plan, so the deploy would fail on every push | The build job skips private repositories |
+
+## 15. Next
 
 Ideas, roughly in the order they would teach the most:
 

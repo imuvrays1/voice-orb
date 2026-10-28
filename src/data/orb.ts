@@ -162,7 +162,7 @@ export const ORB_AUTHOR = {
  * voice on the first click in every browser.
  */
 export const ORB_SAMPLE = {
-  src: "/audio/voice-orb.mp3",
+  src: `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/audio/voice-orb.mp3`,
   title: "A voice orb, explained",
 };
 
