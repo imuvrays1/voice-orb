@@ -31,6 +31,7 @@ import Badge from "@/components/Badge";
 import Button from "@/components/Button";
 import InfoTip from "@/components/InfoTip";
 import SiteNav, { Byline, SiteFooter } from "@/components/SiteNav";
+import OpenfileBanner from "@/components/OpenfileBanner";
 import {
   ORB_LAB,
   ORB_LINK_EXAMPLE,
@@ -627,7 +628,7 @@ export default function VoiceOrbPage() {
         >
           <div className={styles.boardActions}>
             <Button
-              variant="ghost"
+              variant="secondary"
               surface={ground}
               size="sm"
               icon={<ArrowCounterClockwise weight="bold" />}
@@ -1033,6 +1034,11 @@ export default function VoiceOrbPage() {
             </span>
           </a>
         </div>
+      </section>
+
+      {/* ---------- also by UV: last, so it never stands between a reader and the orb ---------- */}
+      <section className={`${styles.panel} ${styles.panelSlim}`} aria-label={ORB_LAB.openfile.label}>
+        <OpenfileBanner />
       </section>
 
       <SiteFooter />

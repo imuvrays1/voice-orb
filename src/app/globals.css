@@ -105,6 +105,8 @@
 html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
+  /* No grey flash on tap: every control has its own pressed state. */
+  -webkit-tap-highlight-color: transparent;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -156,6 +158,13 @@ pre {
 a {
   color: inherit;
   transition: color var(--motion-base) var(--motion-ease);
+}
+
+/* Taps fire at once: nothing here double-taps to zoom. */
+a,
+button,
+input[type="range"] {
+  touch-action: manipulation;
 }
 
 img,

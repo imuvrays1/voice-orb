@@ -382,7 +382,40 @@ own folder name without editing anything.
 | Checking the export before pushing | Built in a clean copy with `--frozen-lockfile`, as the workflow does, then served `out/` under `/voice-orb/` | Nothing failed to load, there were no console errors, and Play found the clip at `/voice-orb/audio/voice-orb.mp3` |
 | Running the workflow in the private lab | Pages on a private repository needs a paid plan, so the deploy would fail on every push | The build job skips private repositories |
 
-## 15. Next
+## 15. A pass on the phone, and Openfile
+
+**Balance.** On a phone, buttons and choices sized to their words leave rows of
+uneven lengths, and small targets for a thumb. Each fix gives a row equal shares of the
+width:
+
+| Where | Before | After |
+|-------|--------|-------|
+| The header's two actions | Each as wide as its words, one under the other | Full width, 48px tall |
+| Tune's Reset and Copy | An outlined button beside a bare word | Two outlined halves |
+| Voice, type, ground, state | A row that wrapped wherever the words ran out: Microphone alone, Halftone alone | A grid of equal cells, two across |
+| Code in "Use it" | Long lines showed through the copy button and out past it | The well's colour over its corner, with a short fade |
+
+**Touch.** Phones have no hover, so a tap leaves `:hover` stuck on whatever was
+tapped. Every hover style now sits behind `(hover: hover) and (pointer: fine)`, and
+the play button no longer stays pinned over the orb after a tap.
+
+| Tried | What happened | Fix |
+|-------|---------------|-----|
+| The browser's own tap feedback | A grey-blue flash over everything tapped | Turned off; each control has its own pressed state |
+| Small targets | Sliders 20px tall, info and copy icons 20–28px | On touch screens: 32px sliders with a bigger dot, and invisible padding around the icons |
+| The link field | 14px text, which iOS zooms into on focus and leaves zoomed | 16px on touch screens |
+| A Templates link in the nav | It squeezed "Voice orb" onto two lines | The name never wraps; the arrow drops under 390px and the link under 340px |
+
+**Openfile.** Openfile is UV's shop of Framer templates. It gets two quiet spots:
+"Templates ↗" in the nav, and one card at the very end, after the engine notes, so it
+never stands between a reader and the orb. Both links carry UTM tags, with
+`utm_content` set to `nav` or `banner`, so Openfile's analytics can tell the two
+apart.
+
+Emulating a phone in a desktop browser can't show sticky hover, the tap flash or input
+zoom. Those need a real phone to confirm.
+
+## 16. Next
 
 Ideas, roughly in the order they would teach the most:
 

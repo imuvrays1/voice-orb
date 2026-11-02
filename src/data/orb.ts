@@ -157,6 +157,17 @@ export const ORB_AUTHOR = {
 };
 
 /**
+ * Openfile, UV's shop of Framer templates: a link in the nav and one quiet
+ * card at the foot of the page. Each link carries UTM tags, and utm_content
+ * names the spot it sits in, so Openfile's analytics can tell the two apart.
+ */
+export const ORB_OPENFILE = {
+  name: "Openfile",
+  href: (spot: "nav" | "banner") =>
+    `https://openfile.pro/?utm_source=voice-orb&utm_medium=referral&utm_campaign=voice-orb&utm_content=${spot}`,
+};
+
+/**
  * What Play plays before you choose anything: a minute on how the orb works,
  * read by an AI voice over a quiet synthesised pad, so the orb hears a clear
  * voice on the first click in every browser.
@@ -199,12 +210,20 @@ export const ORB_LAB = {
     ],
     star: "Star",
     starLabel: "Star voice-orb on GitHub",
+    templates: "Templates",
+    templatesLabel: "Templates: Framer templates on Openfile, opens in a new tab",
   },
   footer: {
     built: "Built by",
     licence: "MIT licence",
     source: "Source on GitHub",
     journal: "Build journal",
+  },
+  openfile: {
+    label: "Also by UV",
+    title: "Openfile",
+    body: "Framer templates for products, studios and portfolios, with every page shown before you buy. Some are free.",
+    cta: "Browse templates",
   },
   reducedMotion: "Reduced motion is on, so every orb holds one still frame.",
   controls: {
@@ -281,7 +300,7 @@ export const ORB_LAB = {
     tune: {
       kicker: "Controls",
       title: "Tune",
-      intro: "Every slider changes every orb on the page. Hover the i for what each one does, and copy the settings to share a look.",
+      intro: "Every slider changes every orb on the page. Hover or tap the i for what each one does, and copy the settings to share a look.",
     },
     inside: {
       kicker: "Inside",
